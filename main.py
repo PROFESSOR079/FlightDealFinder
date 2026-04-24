@@ -1,6 +1,5 @@
 import time
 import requests_cache
-from pprint import pprint
 from datetime import datetime, timedelta
 from data_manager import DataManager
 from flight_search import FlightSearch
