@@ -10,7 +10,7 @@ SERPAPI_ENDPOINT = "https://serpapi.com/search"
 class FlightSearch:
 
     def __init__(self):
-        self._api_key = os.environ.get("SERP_API_KEY")
+        self._api_key = os.environ["SERP_API_KEY"]
 
     def check_flights(self, origin_city_code, destination_city_code, from_time, to_time):
         query = {

@@ -20,3 +20,15 @@ class DataManager:
         data = response.json()
         self.destination_data = data["sheet1"]
         return self.destination_data
+
+    def update_lowest_price(self, row_id, new_price):
+        new_data = {
+            "price": {
+                "lowestPrice": new_price
+            }
+        }
+        requests.put(
+            url=f"{SHEETY_PRICES_ENDPOINT}/{row_id}",
+            json=new_data,
+            auth=self._authorization
+        )
